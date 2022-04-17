@@ -1,0 +1,307 @@
+
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if IE 8 ]><html dir="rtl" lang="ar" class="ie8"><![endif]-->
+<!--[if IE 9 ]><html dir="rtl" lang="ar" class="ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html dir="rtl" lang="ar">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>ITO</title>
+<base href="http://localhost/shop/" />
+<meta name="description" content="My Store" />
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+<link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<link href="catalog/view/javascript/jquery/swiper/css/swiper.min.css" type="text/css" rel="stylesheet" media="screen" />
+<link href="catalog/view/javascript/jquery/swiper/css/opencart.css" type="text/css" rel="stylesheet" media="screen" />
+<script src="catalog/view/javascript/jquery/swiper/js/swiper.jquery.min.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<link href="http://localhost/shop/" rel="canonical" />
+<link href="http://localhost/shop/image/catalog/cart.png" rel="icon" />
+</head>
+<body>
+<nav id="top">
+  <div class="container"><div class="pull-left">
+  <form action="http://localhost/shop/index.php?route=common/currency/currency" method="post" enctype="multipart/form-data" id="form-currency">
+    <div class="btn-group">
+      <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">                               <strong>$</strong>        <span class="hidden-xs hidden-sm hidden-md">العملة</span>&nbsp;<i class="fa fa-caret-down"></i></button>
+      <ul class="dropdown-menu">
+                        <li>
+          <button class="currency-select btn btn-link btn-block" type="button" name="EUR">€ Euro</button>
+        </li>
+                                <li>
+          <button class="currency-select btn btn-link btn-block" type="button" name="SYP">£ Syrian Pound</button>
+        </li>
+                                <li>
+          <button class="currency-select btn btn-link btn-block" type="button" name="USD">$ US Dollar</button>
+        </li>
+                      </ul>
+    </div>
+    <input type="hidden" name="code" value="" />
+    <input type="hidden" name="redirect" value="http://localhost/shop/index.php?route=common/home" />
+  </form>
+</div>
+ 
+    <div class="pull-left">
+  <form action="http://localhost/shop/index.php?route=common/language/language" method="post" enctype="multipart/form-data" id="form-language">
+    <div class="btn-group">
+      <button class="btn btn-link dropdown-toggle" data-toggle="dropdown">
+             
+      <img src="catalog/language/ar/ar.png" alt="Arabic" title="Arabic">
+                              <span class="hidden-xs hidden-sm hidden-md">اللغة</span>&nbsp;<i class="fa fa-caret-down"></i></button>
+      <ul class="dropdown-menu">
+                <li>
+          <button class="btn btn-link btn-block language-select" type="button" name="ar"><img src="catalog/language/ar/ar.png" alt="Arabic" title="Arabic" /> Arabic</button>
+        </li>
+                <li>
+          <button class="btn btn-link btn-block language-select" type="button" name="en-gb"><img src="catalog/language/en-gb/en-gb.png" alt="English" title="English" /> English</button>
+        </li>
+              </ul>
+    </div>
+    <input type="hidden" name="code" value="" />
+    <input type="hidden" name="redirect" value="http://localhost/shop/index.php?route=common/home" />
+  </form>
+</div>
+
+    <div id="top-links" class="nav pull-right">
+      <ul class="list-inline">
+        <li><a href="http://localhost/shop/index.php?route=information/contact"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md">123456789</span></li>
+        <li class="dropdown"><a href="http://localhost/shop/index.php?route=account/account" title="حسابي" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md">حسابي</span> <span class="caret"></span></a>
+          <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="http://localhost/shop/index.php?route=account/register">تسجيل جديد</a></li>
+            <li><a href="http://localhost/shop/index.php?route=account/login">تسجيل الدخول</a></li>
+                      </ul>
+        </li>
+        <li><a href="http://localhost/shop/index.php?route=account/wishlist" id="wishlist-total" title="قائمة رغباتي (0)"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md">قائمة رغباتي (0)</span></a></li>
+        <li><a href="http://localhost/shop/index.php?route=checkout/cart" title="سلة الشراء"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">سلة الشراء</span></a></li>
+        <li><a href="http://localhost/shop/index.php?route=checkout/checkout" title="اتمام الطلب"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md">اتمام الطلب</span></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div id="logo"><a href="http://localhost/shop/index.php?route=common/home"><img src="http://localhost/shop/image/catalog/opencart-logo.png" title="ITO" alt="ITO" class="img-responsive" /></a></div>
+      </div>
+      <div class="col-sm-5"><div id="search" class="input-group">
+  <input type="text" name="search" value="" placeholder="بحث" class="form-control input-lg" />
+  <span class="input-group-btn">
+    <button type="button" class="btn btn-default btn-lg"><i class="fa fa-search"></i></button>
+  </span>
+</div></div>
+      <div class="col-sm-3"><div id="cart" class="btn-group btn-block">
+  <button type="button" data-toggle="dropdown" data-loading-text="جاري ..." class="btn btn-inverse btn-block btn-lg dropdown-toggle"><i class="fa fa-shopping-cart"></i> <span id="cart-total">0 منتجات - $0.00</span></button>
+  <ul class="dropdown-menu pull-right">
+        <li>
+      <p class="text-center">سلة الشراء فارغة !</p>
+    </li>
+      </ul>
+</div>
+</div>
+    </div>
+  </div>
+</header>
+<div class="container">
+  <nav id="menu" class="navbar">
+    <div class="navbar-header"><span id="category" class="visible-xs">أقسام الموقع</span>
+      <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
+    </div>
+    <div class="collapse navbar-collapse navbar-ex1-collapse">
+      <ul class="nav navbar-nav">
+                        <li class="dropdown"><a href="http://localhost/shop/index.php?route=product/category&amp;path=20" class="dropdown-toggle" data-toggle="dropdown">حاسب مكتبي </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">               <ul class="list-unstyled">
+                                <li><a href="http://localhost/shop/index.php?route=product/category&amp;path=20_26">PC (0)</a></li>
+                                <li><a href="http://localhost/shop/index.php?route=product/category&amp;path=20_27">Mac (1)</a></li>
+                              </ul>
+              </div>
+            <a href="http://localhost/shop/index.php?route=product/category&amp;path=20" class="see-all">عرض الكل حاسب مكتبي </a> </div>
+        </li>
+                                <li class="dropdown"><a href="http://localhost/shop/index.php?route=product/category&amp;path=60" class="dropdown-toggle" data-toggle="dropdown">اكسسوارات </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">               <ul class="list-unstyled">
+                                <li><a href="http://localhost/shop/index.php?route=product/category&amp;path=60_63"> لوحة مفاتيح  (0)</a></li>
+                              </ul>
+              </div>
+            <a href="http://localhost/shop/index.php?route=product/category&amp;path=60" class="see-all">عرض الكل اكسسوارات </a> </div>
+        </li>
+                                <li class="dropdown"><a href="http://localhost/shop/index.php?route=product/category&amp;path=18" class="dropdown-toggle" data-toggle="dropdown">حاسب محمول </a>
+          <div class="dropdown-menu">
+            <div class="dropdown-inner">               <ul class="list-unstyled">
+                                <li><a href="http://localhost/shop/index.php?route=product/category&amp;path=18_46">Macs (0)</a></li>
+                                <li><a href="http://localhost/shop/index.php?route=product/category&amp;path=18_45">Windows (0)</a></li>
+                              </ul>
+              </div>
+            <a href="http://localhost/shop/index.php?route=product/category&amp;path=18" class="see-all">عرض الكل حاسب محمول </a> </div>
+        </li>
+                                <li><a href="http://localhost/shop/index.php?route=product/category&amp;path=17">برمجيات </a></li>
+                                <li><a href="http://localhost/shop/index.php?route=product/category&amp;path=59">حلول التخزين </a></li>
+                      </ul>
+    </div>
+  </nav>
+</div>
+ 
+
+<div id="common-home" class="container">
+  <div class="row">
+                <div id="content" class="col-sm-12"><div class="slideshow swiper-viewport">
+  <div id="slideshow0" class="swiper-container">
+    <div class="swiper-wrapper">       <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/xps-Gi3iUJ1FwxI-unsplash-1140x380.jpg" alt="lap" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/niclas-illg-wzVQp_NRIHg-unsplash%20(1)-1140x380.jpg" alt="desktoop" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/andras-vas-Bd7gNnWJBkU-unsplash-1140x380.jpg" alt="laptop" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/chris-j-davis-PT_9ux0j-x4-unsplash-1140x380.jpg" alt="keyboard" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/fotis-fotopoulos-DuHKoV44prg-unsplash%20(1)-1140x380.jpg" alt="sowft" class="img-responsive" /></div>
+       </div>
+  </div>
+  <div class="swiper-pagination slideshow0"></div>
+  <div class="swiper-pager">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#slideshow0').swiper({
+	mode: 'horizontal',
+	slidesPerView: 1,
+	pagination: '.slideshow0',
+	paginationClickable: true,
+	nextButton: '.slideshow .swiper-button-next',
+    prevButton: '.slideshow .swiper-button-prev',
+    spaceBetween: 30,
+	autoplay: 2500,
+    autoplayDisableOnInteraction: true,
+	loop: true
+});
+//--></script>
+<h3>منتجات مميزة</h3>
+<div class="row">
+   <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="product-thumb transition">
+      <div class="image"><a href="http://localhost/shop/index.php?route=product/product&amp;product_id=43"><img src="http://localhost/shop/image/cache/catalog/demo/macbook_1-200x200.jpg" alt="MacBook" title="MacBook" class="img-responsive" /></a></div>
+      <div class="caption">
+        <h4><a href="http://localhost/shop/index.php?route=product/product&amp;product_id=43">MacBook</a></h4>
+        <p>
+	
+		Intel Core 2 Duo processor
+	
+		Powered by an Intel Core 2 Duo processor at speeds up to 2.1..</p>
+                        <p class="price">
+                    $500.00
+                              <span class="price-tax">السعر بدون الضريبة: $500.00</span>
+                  </p>
+              </div>
+      <div class="button-group">
+        <button type="button" onclick="cart.add('43');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">اضافة للسلة</span></button>
+        <button type="button" data-toggle="tooltip" title="إضافة لرغباتي" onclick="wishlist.add('43');"><i class="fa fa-heart"></i></button>
+        <button type="button" data-toggle="tooltip" title="اضافة للمقارنة" onclick="compare.add('43');"><i class="fa fa-exchange"></i></button>
+      </div>
+    </div>
+  </div>
+    <div class="product-layout col-lg-3 col-md-3 col-sm-6 col-xs-12">
+    <div class="product-thumb transition">
+      <div class="image"><a href="http://localhost/shop/index.php?route=product/product&amp;product_id=42"><img src="http://localhost/shop/image/cache/catalog/demo/apple_cinema_30-200x200.jpg" alt="Apple Cinema 30&quot;" title="Apple Cinema 30&quot;" class="img-responsive" /></a></div>
+      <div class="caption">
+        <h4><a href="http://localhost/shop/index.php?route=product/product&amp;product_id=42">Apple Cinema 30&quot;</a></h4>
+        <p>
+	The 30-inch Apple Cinema HD Display delivers an amazing 2560 x 1600 pixel resolution. Designed sp..</p>
+                        <p class="price">
+                    <span class="price-new">$90.00</span> <span class="price-old">$100.00</span>
+                              <span class="price-tax">السعر بدون الضريبة: $90.00</span>
+                  </p>
+              </div>
+      <div class="button-group">
+        <button type="button" onclick="cart.add('42');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">اضافة للسلة</span></button>
+        <button type="button" data-toggle="tooltip" title="إضافة لرغباتي" onclick="wishlist.add('42');"><i class="fa fa-heart"></i></button>
+        <button type="button" data-toggle="tooltip" title="اضافة للمقارنة" onclick="compare.add('42');"><i class="fa fa-exchange"></i></button>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<div class="carousel swiper-viewport">
+  <div id="carousel0" class="swiper-container">
+    <div class="swiper-wrapper">      <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/تنزيل-130x100.png" alt="hp" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/تنزيل%20(1)-130x100.png" alt="Asus" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/لل-130x100.png" alt="Lenovo" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/ببب-130x100.jpg" alt="Apple" class="img-responsive" /></div>
+            <div class="swiper-slide text-center"><img src="http://localhost/shop/image/cache/catalog/yyyyy-130x100.png" alt="Dell" class="img-responsive" /></div>
+      </div>
+  </div>
+  <div class="swiper-pagination carousel0"></div>
+  <div class="swiper-pager">
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</div>
+<script type="text/javascript"><!--
+$('#carousel0').swiper({
+	mode: 'horizontal',
+	slidesPerView: 5,
+	pagination: '.carousel0',
+	paginationClickable: true,
+	nextButton: '.carousel .swiper-button-next',
+    prevButton: '.carousel .swiper-button-prev',
+	autoplay: 2500,
+	loop: true
+});
+--></script>
+</div>
+    </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="row">
+            <div class="col-sm-3">
+        <h5>معلومات</h5>
+        <ul class="list-unstyled">
+                   <li><a href="http://localhost/shop/index.php?route=information/information&amp;information_id=4">من نحن </a></li>
+                    <li><a href="http://localhost/shop/index.php?route=information/information&amp;information_id=6">معلومات التوصيل </a></li>
+                    <li><a href="http://localhost/shop/index.php?route=information/information&amp;information_id=3">سياسة الخصوصية </a></li>
+                    <li><a href="http://localhost/shop/index.php?route=information/information&amp;information_id=5">اتفاقية الشروط والاحكام </a></li>
+                  </ul>
+      </div>
+            <div class="col-sm-3">
+        <h5>خدمات العملاء</h5>
+        <ul class="list-unstyled">
+          <li><a href="http://localhost/shop/index.php?route=information/contact">اتصل بنا</a></li>
+          <li><a href="http://localhost/shop/index.php?route=account/return/add">إرجاع الطلب</a></li>
+          <li><a href="http://localhost/shop/index.php?route=information/sitemap">خريطة الموقع</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>إضافات</h5>
+        <ul class="list-unstyled">
+          <li><a href="http://localhost/shop/index.php?route=product/manufacturer">الشركات</a></li>
+          <li><a href="http://localhost/shop/index.php?route=account/voucher">قسائم الهدايا</a></li>
+          <li><a href="http://localhost/shop/index.php?route=affiliate/login">نظام العمولة</a></li>
+          <li><a href="http://localhost/shop/index.php?route=product/special">العروض المميزة</a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3">
+        <h5>حسابي</h5>
+        <ul class="list-unstyled">
+          <li><a href="http://localhost/shop/index.php?route=account/account">حسابي</a></li>
+          <li><a href="http://localhost/shop/index.php?route=account/order">طلباتي</a></li>
+          <li><a href="http://localhost/shop/index.php?route=account/wishlist">قائمة رغباتي</a></li>
+          <li><a href="http://localhost/shop/index.php?route=account/newsletter">القائمة البريدية</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+    <p>ترجمة <a href="http://www.opencartarab.com" target="_blank">OpenCartArab</a> | دعـم <a href="http://www.opencart.com" target="_blank">OpenCart</a><br /> ITO &copy; 2022</p>
+  </div>
+</footer>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+</body></html>
